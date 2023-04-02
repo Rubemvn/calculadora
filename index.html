@@ -8,7 +8,9 @@
     <title>Calculadora</title>
     <!-- LINKS -->
     <link rel="shortcut icon" type="x-icon" href="./images/icons/New-R-2-icon-browser-tab.png">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- STYLES -->
     <link rel="stylesheet" href="./styles/style.css">
 </head>
@@ -18,29 +20,29 @@
     <div class="content">
         <div class="calculator">
             <div class="panel">
-                <div class="equation"></div>
-                <input type="text">
+                <div id="equation"></div>
+                <div id="display">0</div>
             </div>
 
             <div class="buttons">
-                <button class="button">+</button>
-                <button class="button">-</button>
-                <button class="button">×</button>
-                <button class="button">÷</button>
+                <button class="button operator">+</button>
+                <button class="button operator">-</button>
+                <button class="button operator">×</button>
+                <button class="button operator">÷</button>
                 <button class="button">7</button>
                 <button class="button">8</button>
                 <button class="button">9</button>
-                <button class="button"><img style="width: 30px;" src="./images/icons/backspace.png" alt=""></button>
+                <button class="button backspace"><img style="width: 30px;" src="./images/icons/backspace.png" alt=""></button>
                 <button class="button">4</button>
                 <button class="button">5</button>
                 <button class="button">6</button>
-                <button class="button">=</button>
+                <button class="button resolve">=</button>
                 <button class="button">1</button>
                 <button class="button">2</button>
                 <button class="button">3</button>
-                <button class="button">,</button>
+                <button class="button" style="border-radius: 0 0 0 20px;">,</button>
                 <button class="button">0</button>
-                <button class="button">AC</button>
+                <button class="button operator">AC</button>
                 <!-- <button class="button"></button> -->
 
             </div>
