@@ -1,7 +1,8 @@
 :root {
     --color-01: #ffffff;
-    --color-01-1: #d2a7fa;
+    --color-01-1: #e4e4e4;
     --color-01-2: #7a3db4;
+    --color-01-3: #d6d6d6;
     --color-02: #8a2be2;
     --color-03: #11031f;
     --color-04: #2be2ba;
@@ -75,6 +76,7 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
+    text-align: right;
 }
 
 .buttons {
@@ -94,7 +96,10 @@ body {
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: var(--color-01-1);
+}
+button:active {
+    background-color: var(--color-01-3);
 }
 
 .operator {
@@ -106,7 +111,6 @@ button:hover {
 }
 
 .backspace:hover {
-    opacity: 1;
     background-color: var(--color-05-1);
 }
 
@@ -121,6 +125,5 @@ button:hover {
 }
 
 .resolve:hover {
-    opacity: 1;
     background-color: var(--color-04-1);
 }
