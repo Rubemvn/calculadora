@@ -43,6 +43,11 @@ body {
     display: grid;
     grid-template: 1fr/2fr;
     margin: 15px;
+
+
+    -webkit-box-shadow: 37px 37px 56px 31px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 37px 37px 56px 31px rgba(0, 0, 0, 0.17);
+    box-shadow: 37px 37px 56px 31px rgba(0, 0, 0, 0.17);
 }
 
 .panel {
@@ -98,6 +103,7 @@ body {
 button:hover {
     background-color: var(--color-01-1);
 }
+
 button:active {
     background-color: var(--color-01-3);
 }

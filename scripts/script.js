@@ -6,11 +6,20 @@ window.onload = function () {
     display.focus();
 }
 
+
 // ESSA FUNÇÃO IMPEDE QUE TECLAS QUE NÃO CORRESPONDAM COM A CALCULADORA 
 document.addEventListener("keydown", function (e) {
     if (!checkChar(e)) {
         e.preventDefault();
+    } if (e.key === "Escape") {
+        reset();
+
+    } if (e.key === "Backspace") {
+        backspace();
     }
+
+
+
 })
 
 
@@ -23,15 +32,15 @@ display.addEventListener("blur", function () {
 // FAZ A CHECAGEM SE O CARACTERE É UMA TECLA VÁLIDA
 function checkChar(e) {
     const char = e.key
-    console.log(e.key)
+    // console.log(char)
 
-    const numbers = '[0-9"Arrow""Backspace"]';
+    const numbers = '[0-9]';
 
-    if (char.match(numbers)) {
-        console.log(char)
+    if (char.match(numbers) || char == "ArrowLeft" || char == "ArrowRight") {
         return true
     }
 }
+
 
 // DIGITA O NÚMERO SELECIONADO NA CALCULADORA
 function enterNumber(value) {
@@ -40,7 +49,20 @@ function enterNumber(value) {
     display.value += `${value}`;
     let evento = new Event("keyup");
     display.dispatchEvent(evento);
-    
+}
 
+
+// RESETA TODOS OS VALORES DA CALCULADORA
+function reset() {
+    display.value = "";
+}
+
+function backspace() {
+    let valor = display.value;
+    valor = valor.slice(0, -1);
+    display.value = valor;
+
+    let evento = new Event("keyup");
+    display.dispatchEvent(evento);
 }
 

@@ -25,14 +25,14 @@
             </div>
 
             <div class="buttons">
-                <button onclick="teste()" class="button operator">+</button>
-                <button onclick="teste()" class="button operator">-</button>
-                <button onclick="teste()" class="button operator">×</button>
-                <button onclick="teste()" class="button operator">÷</button>
+                <button onclick="enterNumber('+')" class="button operator">+</button>
+                <button onclick="enterNumber('-')" class="button operator">-</button>
+                <button onclick="enterNumber('×')" class="button operator">×</button>
+                <button onclick="enterNumber('÷')" class="button operator">÷</button>
                 <button onclick="enterNumber(7)" value="7" id="button7" class="button">7</button>
                 <button onclick="enterNumber(8)" value="8" class="button">8</button>
                 <button onclick="enterNumber(9)" value="9" class="button">9</button>
-                <button onclick="teste()" class="button backspace"><img style="width: 30px;" src="./images/icons/backspace.png" alt=""></button>
+                <button onclick="backspace()" class="button backspace"><img style="width: 30px;" src="./images/icons/backspace.png" alt=""></button>
                 <button onclick="enterNumber(4)" class="button">4</button>
                 <button onclick="enterNumber(5)" class="button">5</button>
                 <button onclick="enterNumber(6)" class="button">6</button>
@@ -40,9 +40,9 @@
                 <button onclick="enterNumber(1)" class="button">1</button>
                 <button onclick="enterNumber(2)" class="button">2</button>
                 <button onclick="enterNumber(3)" class="button">3</button>
-                <button onclick="teste()" class="button" style="border-radius: 0 0 0 20px;">,</button>
+                <button onclick="enterNumber('.')" class="button" style="border-radius: 0 0 0 20px;">.</button>
                 <button onclick="enterNumber(0)" class="button">0</button>
-                <button onclick="teste()" class="button operator">AC</button>
+                <button onclick="reset()" class="button operator">AC</button>
                 <!-- <button class="button"></button> -->
 
             </div>
