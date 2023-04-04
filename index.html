@@ -21,7 +21,7 @@
         <div class="calculator">
             <div class="panel">
                 <div id="equation">1+1</div>
-                <input id="display" value="0">
+                <input id="display" type="text" placeholder="0">
             </div>
 
             <div class="buttons">
@@ -29,9 +29,9 @@
                 <button onclick="teste()" class="button operator">-</button>
                 <button onclick="teste()" class="button operator">×</button>
                 <button onclick="teste()" class="button operator">÷</button>
-                <button onclick="enterNumber(7)" class="button">7</button>
-                <button onclick="enterNumber(8)" class="button">8</button>
-                <button onclick="enterNumber(9)" class="button">9</button>
+                <button onclick="enterNumber(7)" value="7" id="button7" class="button">7</button>
+                <button onclick="enterNumber(8)" value="8" class="button">8</button>
+                <button onclick="enterNumber(9)" value="9" class="button">9</button>
                 <button onclick="teste()" class="button backspace"><img style="width: 30px;" src="./images/icons/backspace.png" alt=""></button>
                 <button onclick="enterNumber(4)" class="button">4</button>
                 <button onclick="enterNumber(5)" class="button">5</button>
