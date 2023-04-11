@@ -20,15 +20,15 @@
     <div class="content">
         <div class="calculator">
             <div class="panel">
-                <div id="equation">1+1</div>
+                <div id="equation">0</div>
                 <input id="display" type="text" placeholder="0">
             </div>
 
             <div class="buttons">
-                <button onclick="enterNumber('+')" class="button operator">+</button>
-                <button onclick="enterNumber('-')" class="button operator">-</button>
-                <button onclick="enterNumber('×')" class="button operator">×</button>
-                <button onclick="enterNumber('÷')" class="button operator">÷</button>
+                <button onclick="enterOperation('+')" class="button operator">+</button>
+                <button onclick="enterOperation('-')" class="button operator">-</button>
+                <button onclick="enterOperation('×')" class="button operator">×</button>
+                <button onclick="enterOperation('÷')" class="button operator">÷</button>
                 <button onclick="enterNumber(7)" value="7" id="button7" class="button">7</button>
                 <button onclick="enterNumber(8)" value="8" class="button">8</button>
                 <button onclick="enterNumber(9)" value="9" class="button">9</button>
@@ -36,7 +36,7 @@
                 <button onclick="enterNumber(4)" class="button">4</button>
                 <button onclick="enterNumber(5)" class="button">5</button>
                 <button onclick="enterNumber(6)" class="button">6</button>
-                <button onclick="teste()" class="button resolve">=</button>
+                <button onclick="resolveOperation()" class="button resolve">=</button>
                 <button onclick="enterNumber(1)" class="button">1</button>
                 <button onclick="enterNumber(2)" class="button">2</button>
                 <button onclick="enterNumber(3)" class="button">3</button>
