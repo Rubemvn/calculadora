@@ -1,10 +1,10 @@
 // IMPEDE QUE O FOCO SAIA DO INPUT
 // display.addEventListener("blur", function () {
-//     display.focus();
+//   
 // })
 // // COLOCA O FOCO PARA O INPUT ASSIM QUE A PAGINA É CARREGADA
 // window.onload = function () {
-//     display.focus();
+//   
 // }
 
 
@@ -47,31 +47,24 @@ document.addEventListener("keydown", function (e) {
         }
     }
 })
-// FAZ A CHECAGEM SE O CARACTERE É UMA TECLA VÁLIDA
-function checkChar(e) {
-    // console.log(char)
-
-
-
-}
-
-
-
 
 
 // RESETA TODOS OS VALORES DA CALCULADORA
 function reset() {
-    display.value = "";
+    display.textContent = 0;
 }
 
 // APAGA O ÚLTIMO DIGITO
 function backspace() {
-    let valor = display.value;
+    let valor = display.textContent;
     valor = valor.slice(0, -1);
-    display.value = valor;
+    display.textContent = valor;
 
     let evento = new Event("keyup");
     display.dispatchEvent(evento);
+    if(display.textContent == ""){
+        display.textContent = 0;
+    }
 }
 
 // RESOLVE A OPERAÇÃO
@@ -80,46 +73,40 @@ function resolveOperation() {
 }
 
 
-
 // QUANDO UMA TECLA DE OPERAÇÃO É ACIONADA
 function enterOperation(op) {
-    // formatDisplay(op)
-    // if (typeof parseFloat(display.value) === "number") {
-    //     valueChecker(op)
-    // }
-    // console.log(values)
-    console.log(op)
+    formatDisplay(op)
+    if (typeof parseFloat(display.textContent) === "number") {
+        valueChecker(op)
+    }
 }
 
 // DIGITA O NÚMERO SELECIONADO NA CALCULADORA
 function enterNumber(value) {
-    console.log(value)
-    // display.focus();
-
-    // display.value += `${value}`;
-    // let evento = new Event("keyup");
-    // display.dispatchEvent(evento);
-}
-
-function teste() {
-    console.log("rubem")
+    if(display.textContent == 0){
+        display.textContent = `${value}`;
+    } else {
+        display.textContent += `${value}`;
+        let evento = new Event("keyup");
+        display.dispatchEvent(evento);
+    }
 }
 
 // VERIFICA SE O DISPLAY ESTÁ APTO PARA CONTINUAR A OPERAÇÃO
 function formatDisplay(op) {
-    if (op === "+" && (display.value === "" || display.value === "0" || display.value === "-" || display.value === "+")) {
+    if (op === "+" && (display.textContent === "" || display.textContent === "0" || display.textContent === "-" || display.textContent === "+")) {
         console.log(op);
-        display.value = "+"
+        display.textContent = "+"
     }
-    if (op === "-" && (display.value === "" || display.value === "0" || display.value === "+" || display.value === "-")) {
+    if (op === "-" && (display.textContent === "" || display.textContent === "0" || display.textContent === "+" || display.textContent === "-")) {
         console.log(op);
-        display.value = "-"
+        display.textContent = "-"
     }
-    if (op === "×" && (display.value === "0" || display.value === "" || display.value === "+" || display.value === "-")) {
+    if (op === "×" && (display.textContent === "0" || display.textContent === "" || display.textContent === "+" || display.textContent === "-")) {
         console.log(op);
         reset()
     }
-    if (op === "÷" && (display.value === "0" || display.value === "" || display.value === "+" || display.value === "-")) {
+    if (op === "÷" && (display.textContent === "0" || display.textContent === "" || display.textContent === "+" || display.textContent === "-")) {
         console.log(op);
         reset()
     }
@@ -128,13 +115,13 @@ function formatDisplay(op) {
 
 // FAZ CHEGAGEM SE OS TEM VALORES PARA EFETUADA A OPERAÇÃO
 function valueChecker(op) {
-    if ((display.value && display.value !== "+" && display.value !== "-") && !values.valueOne) {
-        values.valueOne = parseFloat(display.value);
+    if ((display.textContent && display.textContent !== "+" && display.textContent !== "-") && !values.valueOne) {
+        values.valueOne = parseFloat(display.textContent);
         console.log(values.valueOne)
         reset()
         values.operator = op;
-    } else if ((display.value && display.value !== "+" && display.value !== "-") && !values.valueTwo) {
-        values.valueTwo = parseFloat(display.value);
+    } else if ((display.textContent && display.textContent !== "+" && display.textContent !== "-") && !values.valueTwo) {
+        values.valueTwo = parseFloat(display.textContent);
         reset()
     }
     if (values.valueOne && values.valueTwo) {
@@ -147,22 +134,22 @@ function valueChecker(op) {
 function operation(num1, num2, op) {
     if (op == "+") {
         values.valueOperation = num1 + num2;
-        display.value = values.valueOperation;
+        display.textContent = values.valueOperation;
         values.valueOne = null
         values.valueTwo = null
     } else if (op == "-") {
         values.valueOperation = num1 - num2;
-        display.value = values.valueOperation;
+        display.textContent = values.valueOperation;
         values.valueOne = null
         values.valueTwo = null
     } else if (op == "÷") {
         values.valueOperation = num1 / num2;
-        display.value = values.valueOperation;
+        display.textContent = values.valueOperation;
         values.valueOne = null
         values.valueTwo = null
     } else if (op == "×") {
         values.valueOperation = num1 * num2;
-        display.value = values.valueOperation;
+        display.textContent = values.valueOperation;
         values.valueOne = null
         values.valueTwo = null
     }
