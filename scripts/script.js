@@ -1,15 +1,6 @@
-// IMPEDE QUE O FOCO SAIA DO INPUT
-// display.addEventListener("blur", function () {
-//   
-// })
-// // COLOCA O FOCO PARA O INPUT ASSIM QUE A PAGINA É CARREGADA
-// window.onload = function () {
-//   
-// }
-
-
 
 let display = document.getElementById("display");
+let equation = document.getElementById("equation");
 
 let values = {
     operator: "",
@@ -18,7 +9,7 @@ let values = {
     valueOperation: null,
 }
 
-// ESSA FUNÇÃO IMPEDE QUE TECLAS QUE NÃO CORRESPONDAM COM A CALCULADORA SEJAM DIGITADAS
+// ESSA FUNÇÃO IMPEDE QUE TECLAS QUE NÃO CORRESPONDAM COM A CALCULADORA NAO SEJAM DIGITADAS
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
         reset();
@@ -62,7 +53,7 @@ function backspace() {
 
     let evento = new Event("keyup");
     display.dispatchEvent(evento);
-    if(display.textContent == ""){
+    if (display.textContent == "") {
         display.textContent = 0;
     }
 }
@@ -83,10 +74,16 @@ function enterOperation(op) {
 
 // DIGITA O NÚMERO SELECIONADO NA CALCULADORA
 function enterNumber(value) {
-    if(display.textContent == 0){
-        display.textContent = `${value}`;
+    if (display.textContent.length == 11) {
+        let valor = display.textContent;
+        valor = valor.slice(0, -1);
+        display.textContent = valor;
+        console.log("valor");
+    } 
+    if (display.textContent == "00") {
+        display.textContent = value;
     } else {
-        display.textContent += `${value}`;
+        display.textContent += value;
         let evento = new Event("keyup");
         display.dispatchEvent(evento);
     }

@@ -35,7 +35,14 @@ body {
     align-items: center;
 }
 
-.content {
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.calculator {
     width: 400px;
     height: 520px;
     background-color: var(--color-01-1);
